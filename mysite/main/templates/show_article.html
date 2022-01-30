@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title%}
+Article Details
+{% endblock title%}
+
+{% block content %}
+    <h1>{{record.name | capfirst}}</h1>
+    <img src="{{ record.image }}" width="700" height="400" />
+    <p>{{record.body}}</p>
+    <p>{{record.created_at}}</p>
+    <p>{{record.updated_at}}</p>
+    <a href="{% url 'article_update' record.id %}"><button>Update Me</button></a>
+    <a href="{% url 'article_delete' record.id %}"><button>Delete Me</button></a>
+{% endblock content %}

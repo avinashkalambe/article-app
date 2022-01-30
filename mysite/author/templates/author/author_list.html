@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<table>
+{% for author in object_list %}
+    <tr>
+    <td><a href="{% url 'author_detail' author.id %}"><img src= '{{ author.headshot.url }}' style="width: 100px; height: 100px;"></img></a></td>
+    <td><p>{{ author.name }}</p></td>
+    <td><p>{{ author.email }}</p></td>
+    </tr>
+{% endfor%}
+</table>
+{% endblock %}

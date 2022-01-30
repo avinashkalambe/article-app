@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<table>
+    <tr>
+    <td><img src= '{{ object.headshot.url }}' style="width: 100px; height: 100px;"></img></td>
+    <td><p>{{ object.name }}</p></td>
+    <td><p>{{ object.email }}</p></td>
+    </tr>
+    <tr><td><a href="{% url 'author_update' object.id %}"><button>Update</button></a></td><td><a href="{% url 'author_delete' object.id %}"><button>Delete</button></a></td></tr>
+</table>
+{% endblock %}
